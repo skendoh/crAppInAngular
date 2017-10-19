@@ -1,0 +1,8 @@
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+    <h3 class="margin">Cartas del juego</h3>
+    <div *ngFor="let cartas of aCartas">
+        
+      <div class="col-sm-4"> <img src='{{cartas.img}}'> La carta {{cartas.nombre}} tiene un coste de {{cartas.coste}}</div>
+    </div>
+  </div>
