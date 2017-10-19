@@ -26,6 +26,9 @@ export class HomeService {
     ];
 }
   addCartas(carta: Cartas) {
+    // Llamada al servidor para que me añada la carta, esperamos confirmacion
+    // {status:501 msgError:"El campo nombre es obligatorio"}
+      console.log('BACKEND: No tenemos ningun fallo');
     return carta;
   }
 }
