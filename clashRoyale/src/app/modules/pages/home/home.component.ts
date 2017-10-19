@@ -10,11 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   aCartas: Array <Cartas>;
-
+  // variable : objeto
+  oCarta: Cartas;
   constructor(private homeSvr: HomeService) { }
 
   ngOnInit() {
     this.aCartas = this.homeSvr.getCartas();
+    this.oCarta = new Cartas();
   }
-
+  btnInsertCard() {
+    // Llamamos al servicio para que nos de el objeto carta para insertarlo en nuestro array aCartas
+    this.aCartas.push(this.homeSvr.addCartas(this.oCarta));
+  }
 }

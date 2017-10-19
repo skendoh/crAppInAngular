@@ -2,7 +2,10 @@
 <div class="container-fluid bg-1 text-center">
     <h3 class="margin">Cartas del juego</h3>
     <div *ngFor="let cartas of aCartas">
-        
       <div class="col-sm-4"> <img src='{{cartas.img}}'> La carta {{cartas.nombre}} tiene un coste de {{cartas.coste}}</div>
     </div>
+    <input id="nombre" name = 'nombre' type="text" [(ngModel)]="oCarta.nombre"> <!-- ngModel guarda en el component.ts esta variable (nombre) --> 
+    <input id='coste' name = 'coste' type="number" [(ngModel)]="oCarta.coste">
+    <button class="btn-primary" type ="button" (click)='btnInsertCard()'> añadir </button>
+    <p>{{oCarta.nombre}} {{oCarta.coste}}</p>
   </div>
