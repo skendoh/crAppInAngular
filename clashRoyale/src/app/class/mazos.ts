@@ -1,6 +1,6 @@
 import { Cartas } from './cartas';
 export class Mazos {
-        cartas: Cartas;
+        cartas: Array<Cartas>;
 
         constructor() { }
 }

@@ -4,11 +4,11 @@ import { HomeService } from '../../../services/home.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-make-decks',
+  templateUrl: './make-decks.component.html',
+  styleUrls: ['./make-decks.component.css']
 })
-export class HomeComponent implements OnInit {
+export class MakeDecksComponent implements OnInit {
 
   aCartas: Array <Cartas>;
   // variable : objeto
@@ -20,16 +20,12 @@ export class HomeComponent implements OnInit {
 
   // El primer metodo que se ejecuta conforme se carga la pantalla
   ngOnInit() {
-    this.aCartas = [];
+     // Rellena el Array de cartas
+     this.aCartas = this.homeSvr.getCartas();
     // Inicia el objeto carta
     this.oCarta = new Cartas();
     this.oMazo = new Mazos();
     this.oMazo.cartas = [];
-  }
-
-  btnGetCard() {
-    // Rellena el Array de cartas
-    this.aCartas = this.homeSvr.getCartas();
   }
 
   btnInsertCard() {
@@ -57,4 +53,5 @@ export class HomeComponent implements OnInit {
       this.aCartas.push(oCarta);
       this.oMazo.cartas.splice(index, 1);
   }
+
 }

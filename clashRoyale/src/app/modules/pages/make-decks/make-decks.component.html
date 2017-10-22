@@ -4,8 +4,8 @@
       <input id="nombre" name = 'nombre' type="text" [(ngModel)]="oCarta.nombre" required> <!-- ngModel guarda en el component.ts esta variable (nombre) --> 
       <input id='coste' name = 'coste' type="number" [(ngModel)]="oCarta.coste" required>
       <button class="btn-primary" type ="button" (click)='btnInsertCard()'> añadir </button>
-      <button class="btn-primary" type ="button" (click)='btnGetCard()'> Pintar Cartas </button>
     </div>
+  
     <h3 class="margin col-sm-12">Cartas del juego: </h3>
   
       <div *ngFor="let cartas of aCartas; let i = index" (click)='fcnInsertCardToDeck(this.cartas, i)' class="col-lg-3 col-lg-offset-1">
