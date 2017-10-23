@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
 
   // El primer metodo que se ejecuta conforme se carga la pantalla
   ngOnInit() {
-    this.aCartas = [];
+    this.aCartas = this.homeSvr.getCartas();
     // Inicia el objeto carta
     this.oCarta = new Cartas();
     this.oMazo = new Mazos();
@@ -59,7 +59,14 @@ export class HomeComponent implements OnInit {
       this.aCartas.push(oCarta);
       this.oMazo.cartas.splice(index, 1);
   }
-  btngetDeck() {
+  btnGetDeck() {
       this.aMazo = this.homeSvr.getMazo();
+  }
+  btnInsertDeck() {
+    if (this.oMazo.cartas.length === 8) {
+    this.aMazo.push(this.oMazo);
+    this.oMazo = new Mazos();
+    this.btnGetCard();
+    }
   }
 }

@@ -5,7 +5,10 @@
       <input id='coste' name = 'coste' type="number" [(ngModel)]="oCarta.coste" required>
       <button class="btn-primary" type ="button" (click)='btnInsertCard()'> añadir </button>
       <button class="btn-primary" type ="button" (click)='btnGetCard()'> Pintar Cartas </button>
-      <button class="btn-primary" type ="button" (click)='btngetDeck()'>Instertar mazo</button>
+      <button class="btn-primary" type ="button" (click)='btnGetDeck()'>Pintar Mazos</button>
+      <input id="nombreMazo" name = 'nombreMazo' type="text" [(ngModel)]="oMazo.nombre" required>
+      <button class="btn-primary" type ="button" (click)='btnInsertDeck()'>Insertar Mazo</button>
+      <button class="btn-primary" type ="button" (click)='fcnSelectDeck(this.mazoSelect)'>Cambiar Mazo</button>
     </div>
     <h3 class="margin col-sm-12">Cartas del juego: </h3>
   
@@ -19,9 +22,13 @@
       <img src='{{cartasMazo.img}}'  width="80" height="80">{{cartasMazo.nombre}} coste {{cartasMazo.coste}}
     </div>
     <h3 class="margin col-sm-12">Mazos del juego: </h3>
-    
-        <div *ngFor="let mazo of aMazos" class="col-lg-12">
-          {{mazo.nombre}}
-          <div *ngFor="let carta of mazo.cartas" class="col-lg-3"><img src='{{carta.img}}' class="img-rounded" width="80" height="80"/> {{carta.nombre}} coste {{carta.coste}}
-        </div></div>
+        
+    <div *ngFor="let mazo of aMazo" class="col-sm-12 checkbox panel panel-default">
+          <div class = "panel-heading">{{mazo.nombre}}</div>>
+          <div *ngFor="let cartasDelMazo of mazo.cartas" class="col-sm-1 panel-body">
+          <img src='{{cartasDelMazo.img}}'  width="80" height="80">{{cartasDelMazo.nombre}} coste {{cartasDelMazo.coste}}</div>
+        </div>
   </div>
+           
+           
+  
