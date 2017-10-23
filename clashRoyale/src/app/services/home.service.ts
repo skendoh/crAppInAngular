@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cartas } from '../class/cartas';
+import { Mazos } from '../class/mazos';
 @Injectable()
 export class HomeService {
 
@@ -23,6 +24,41 @@ export class HomeService {
       {'id': 16, 'nombre': 'Tornado', 'coste': 6, 'img': '../../assets/tornado.png'}
     ];
 }
+  getMazo() {
+
+    return [
+      {'nombre' : 'Mazo 1' , 'cartas':
+      [{'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'}
+      ]},
+      {'nombre' : 'Mazo 2' , 'cartas':
+      [{'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'}
+      ]},
+      {'nombre' : 'Mazo 3' , 'cartas':
+      [{'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'},
+      {'id': 1, 'nombre': 'Barril de Goblins', 'coste': 5, 'img': '../../assets/barril_goblins.png'}
+      ]}
+    ];
+  }
   addCartas(carta: Cartas) {
     // Llamada al servidor para que me añada la carta, esperamos confirmacion
     // {status:501 msgError:"El campo nombre es obligatorio"}

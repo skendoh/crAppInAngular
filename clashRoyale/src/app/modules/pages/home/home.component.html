@@ -5,6 +5,7 @@
       <input id='coste' name = 'coste' type="number" [(ngModel)]="oCarta.coste" required>
       <button class="btn-primary" type ="button" (click)='btnInsertCard()'> añadir </button>
       <button class="btn-primary" type ="button" (click)='btnGetCard()'> Pintar Cartas </button>
+      <button class="btn-primary" type ="button" (click)='btngetDeck()'>Instertar mazo</button>
     </div>
     <h3 class="margin col-sm-12">Cartas del juego: </h3>
   
@@ -17,5 +18,10 @@
      <div *ngFor="let cartasMazo of oMazo.cartas; let i = index" (click)= 'fcnDeleteCardToDeck(this.cartasMazo, i)' class="col-lg-3">
       <img src='{{cartasMazo.img}}'  width="80" height="80">{{cartasMazo.nombre}} coste {{cartasMazo.coste}}
     </div>
-
+    <h3 class="margin col-sm-12">Mazos del juego: </h3>
+    
+        <div *ngFor="let mazo of aMazos" class="col-lg-12">
+          {{mazo.nombre}}
+          <div *ngFor="let carta of mazo.cartas" class="col-lg-3"><img src='{{carta.img}}' class="img-rounded" width="80" height="80"/> {{carta.nombre}} coste {{carta.coste}}
+        </div></div>
   </div>

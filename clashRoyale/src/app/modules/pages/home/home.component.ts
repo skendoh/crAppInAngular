@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   oCarta: Cartas;
   oMazo: Mazos;
   selectedObject: any;
+  aMazo: Array <Mazos>;
   // inyeccion del Servicio
   constructor(private homeSvr: HomeService) { }
 
@@ -24,6 +25,7 @@ export class HomeComponent implements OnInit {
     // Inicia el objeto carta
     this.oCarta = new Cartas();
     this.oMazo = new Mazos();
+    this.aMazo = [];
     this.oMazo.cartas = [];
   }
 
@@ -56,5 +58,8 @@ export class HomeComponent implements OnInit {
   fcnDeleteCardToDeck(oCarta, index) {
       this.aCartas.push(oCarta);
       this.oMazo.cartas.splice(index, 1);
+  }
+  btngetDeck() {
+      this.aMazo = this.homeSvr.getMazo();
   }
 }
